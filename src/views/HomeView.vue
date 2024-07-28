@@ -21,6 +21,7 @@ watch(value, (nValue) => {
 
 <template>
   <div>
+    <div class="title"><span>黑名单查询</span></div>
     <div>
       <input title="search user" placeholder="请输入账号" type="text" v-model="value">
     </div>
@@ -36,6 +37,9 @@ watch(value, (nValue) => {
 </template>
 
 <style scoped>
+.title {
+  text-align: center;
+}
 .empty {
   text-align: center;
 }

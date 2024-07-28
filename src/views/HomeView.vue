@@ -21,8 +21,8 @@ watch(value, (nValue) => {
 
 <template>
   <div>
-    <div class="title"><span>黑名单查询</span></div>
-    <div>
+    <div class="center"><span>黑名单查询</span></div>
+    <div class="center">
       <input title="search user" placeholder="请输入账号" type="text" v-model="value">
     </div>
     <div v-if="rlt.length > 0">
@@ -30,17 +30,14 @@ watch(value, (nValue) => {
         {{ user }}
       </li>
     </div>
-    <div v-else class="empty">
+    <div v-else class="center">
       无结果
     </div>
   </div>
 </template>
 
 <style scoped>
-.title {
-  text-align: center;
-}
-.empty {
+.center {
   text-align: center;
 }
 </style>

@@ -1,7 +1,7 @@
 <script setup>
-import users from '../stores/users.js'
+import users from '@/stores/users'
 import { ref, watch } from 'vue'
-import { isEmptyString } from '../utils'
+import { isEmptyString } from '@/utils'
 
 let value = ref("")
 let rlt = ref([])

@@ -1,17 +1,25 @@
 <script setup>
-import users from '@/stores/users'
 import { ref, watch } from 'vue'
 import { isEmptyString } from '@/utils'
+import axios from "axios"
+
 
 let value = ref("")
 let rlt = ref([])
+let users = ref([])
+
+axios.get("./blacks.json").then(({ data }) => {
+  users.value = data
+}).catch(() => {
+  users.value = []
+})
 
 watch(value, (nValue) => {
   if (isEmptyString(nValue)) {
     rlt.value = [];
     return;
   }
-  let black = users.filter((user) => {
+  let black = users.value.filter((user) => {
     return user.indexOf(nValue) >= 0;
   })
   rlt.value = black
